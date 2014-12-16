@@ -17,7 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "coffee-script": "^1.8.0",
-    "jest-cli": "^0.2.0"
+    "jest-cli": "^0.2.1"
   },
   "jest": {
     "testDirectoryName": "test",
@@ -32,6 +32,6 @@
     ]
   },
   "dependencies": {
-    "kdf-core": "^0.0.3"
+    "kdf-core": "^0.0.4"
   }
 }
