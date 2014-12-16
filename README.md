@@ -1,4 +1,5 @@
-## KDDom
+## KDDom [![Build Status](https://img.shields.io/travis/kdframework/dom/master.svg?style=flat)](https://travis-ci.org/kdframework/dom) [![Dependency Status](https://img.shields.io/david/dev/kdframework/dom.svg?style=flat)](https://david-dm.org/kdframework/dom#info=devDependencies) [![Dependency Status](https://img.shields.io/david/kdframework/dom.svg?style=flat)](https://david-dm.org/kdframwork/dom#info=dependencies)
+--
 
 A library focuses to export foundation of the `KDFramework` view tree.
 
