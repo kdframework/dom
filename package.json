@@ -1,6 +1,6 @@
 {
   "name": "kdf-dom",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "DOM module of KDFramework",
   "main": "lib/index.js",
   "repository": {
@@ -32,6 +32,6 @@
     ]
   },
   "dependencies": {
-    "kdf-core": "^0.0.4"
+    "kdf-core": "0.0.x"
   }
 }
