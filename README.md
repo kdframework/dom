@@ -6,7 +6,7 @@ A library focuses to export foundation of the `KDFramework` view tree.
 It exports:
 
 - `KDTextNode` A type to represent a single text node that maps to `DOM Text`
-- `KDViewNode` A type to represent a single view node that mapx to `DOM Element`
+- `KDViewNode` A type to represent a single view node that maps to `DOM Element`
 
 ## Motivation
 
