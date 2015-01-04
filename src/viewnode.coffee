@@ -80,14 +80,17 @@ module.exports = class KDViewNode extends KDObject
    *
    * @param {KDViewNode|KDTextNode} subview - Subview to be added.
    * @param {Boolean=} prepend - Flag for prepending or appending.
+   * @param {Boolean=} lazy - Flag for setting subview count after adding finishes.
   ###
-  addSubview: (subview, prepend = no) ->
+  addSubview: (subview, prepend = no, lazy = no) ->
 
     if prepend
     then @subviews.unshift subview
     else @subviews.push subview
 
     subview.parent = this
+
+    @setSubviewCount()  unless lazy
 
 
   ###*

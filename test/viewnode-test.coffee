@@ -73,6 +73,21 @@ describe 'KDViewNode', ->
         expect(appendable.parent).toBe node
 
 
+      it "doesn't set count if it is lazy", ->
+
+        spyOn node, 'setSubviewCount'
+
+        # Third argument is `lazy`
+        node.addSubview new KDViewNode, no, yes
+
+        expect(node.setSubviewCount.calls.length).toEqual 0
+
+        # Third argument is `lazy`
+        node.addSubview new KDViewNode, no, no
+
+        expect(node.setSubviewCount.calls.length).toEqual 1
+
+
     describe '#addSubviews', ->
 
       {node} = {}
