@@ -73,25 +73,52 @@ describe 'KDViewNode', ->
         expect(appendable.parent).toBe node
 
 
+      it "doesn't set count if it is lazy", ->
+
+        spyOn node, 'setSubviewCount'
+
+        # Third argument is `lazy`
+        node.addSubview new KDViewNode, no, yes
+
+        expect(node.setSubviewCount.calls.length).toEqual 0
+
+        # Third argument is `lazy`
+        node.addSubview new KDViewNode, no, no
+
+        expect(node.setSubviewCount.calls.length).toEqual 1
+
+
     describe '#addSubviews', ->
 
       {node} = {}
 
       beforeEach -> node = new KDViewNode
 
-      describe '#addSubviews', ->
+      it 'adds subviews', ->
 
-        it 'adds subviews', ->
+        first  = new KDViewNode
+        second = new KDViewNode
+        third  = new KDViewNode
 
-          first  = new KDViewNode
-          second = new KDViewNode
-          third  = new KDViewNode
+        node.addSubviews [first, second, third]
 
-          node.addSubviews [first, second, third]
+        expect(node.subviews[0]).toBe first
+        expect(node.subviews[1]).toBe second
+        expect(node.subviews[2]).toBe third
 
-          expect(node.subviews[0]).toBe first
-          expect(node.subviews[1]).toBe second
-          expect(node.subviews[2]).toBe third
+
+      it 'only updates subview count once', ->
+
+        spyOn node, 'setSubviewCount'
+
+        first  = new KDViewNode
+        second = new KDViewNode
+        third  = new KDViewNode
+
+        node.addSubviews [first, second, third]
+
+        # it's 1, not 3
+        expect(node.setSubviewCount.calls.length).toEqual 1
 
 
   describe '#destroySubviews', ->
