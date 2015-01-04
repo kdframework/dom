@@ -100,7 +100,9 @@ module.exports = class KDViewNode extends KDObject
   ###
   addSubviews: (subviews) ->
 
-    @addSubview subview  for subview in subviews
+    @addSubview subview, no, yes  for subview in subviews
+
+    @setSubviewCount()
 
 
   ###*
